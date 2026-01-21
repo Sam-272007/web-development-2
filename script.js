@@ -5,6 +5,7 @@ const steps = document.querySelectorAll(".step");
 const incomeBtn = document.getElementById("incomeBtn");
 const expenseBtn = document.getElementById("expenseBtn");
 const form = document.getElementById("transactionForm");
+const resetBtn = document.getElementById("resetBtn");
 
 const amountInput = document.getElementById("amount");
 const categoryInput = document.getElementById("category");
@@ -28,10 +29,9 @@ function updateUI() {
     let expense = 0;
     listEl.innerHTML = "";
 
-    transactions.forEach((t, i) => {
+    transactions.forEach(t => {
         t.type === "income" ? income += t.amount : expense += t.amount;
         const li = document.createElement("li");
-        li.dataset.index = i;
         li.innerHTML = `<span>${t.category}</span><span>₹${t.amount}</span>`;
         listEl.appendChild(li);
     });
@@ -105,24 +105,11 @@ form.addEventListener("submit", e => {
     resetFlow();
 });
 
-amountInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        form.requestSubmit();
-    }
-});
-
-categoryInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        form.requestSubmit();
-    }
-});
-
-listEl.addEventListener("click", e => {
-    const li = e.target.closest("li");
-    if (!li) return;
-    alert(transactions[li.dataset.index].category);
+resetBtn.addEventListener("click", () => {
+    transactions = [];
+    localStorage.removeItem("transactions");
+    updateUI();
+    resetFlow();
 });
 
 updateUI();
