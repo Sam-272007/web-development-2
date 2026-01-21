@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.app {
+    width: 380px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+}
+
+.step {
+    display: none;
+    text-align: center;
+}
+
+.step.active {
+    display: block;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #00f260, #0575e6);
+}
+
+.option {
+    background: rgba(255,255,255,0.25);
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 14px;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+}
+
+.cards {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.card {
+    flex: 1;
+    padding: 10px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.income {
+    background: linear-gradient(135deg,#00b09b,#96c93d);
+}
+
+.expense {
+    background: linear-gradient(135deg,#ff416c,#ff4b2b);
+}
+
+.balance {
+    background: linear-gradient(135deg,#36d1dc,#5b86e5);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.15);
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+.money {
+    position: absolute;
+    top: -80px;
+    font-size: 26px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(120vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+.expense-text {
+    position: absolute;
+    bottom: 20px;
+    font-size: 22px;
+    color: #ff4b2b;
+    font-weight: bold;
+    animation: reduce 2.2s ease-out forwards;
+}
+
+@keyframes reduce {
+    0% {
+        transform: scale(0.8) translateY(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1.2) translateY(-30px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-260px);
+        opacity: 0;
+    }
+}
