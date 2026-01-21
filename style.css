@@ -53,6 +53,10 @@ button {
     background: rgba(255,255,255,0.25);
 }
 
+#resetBtn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
 input {
     width: 100%;
     padding: 14px;
@@ -144,3 +148,4 @@ li {
         opacity: 0;
     }
 }
+
