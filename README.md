@@ -60,3 +60,7 @@ This project provides a simple interface to record transactions, categorize them
 
 ## 📊 Project Category
 Expense / Budget Tracker
+
+## 🌐 Website Preview
+[![Website Preview](budgetTracker.png)]()
+
