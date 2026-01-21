@@ -62,5 +62,5 @@ This project provides a simple interface to record transactions, categorize them
 Expense / Budget Tracker
 
 ## 🌐 Website Preview
-[![Website Preview](budgetTracker.png)]()
+[![Website Preview](budgetTracker.png)](https://sam-272007.github.io/web-development-2/)
 
